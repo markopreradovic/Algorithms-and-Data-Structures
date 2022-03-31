@@ -1,0 +1,8 @@
+NODE *search_sort(NODE *lista, <tip> info)
+{
+   while (lista && lista->info < info)
+      lista = lista->next;
+   if (!lista || lista->info > info)
+      return NULL;
+   return lista;
+}
