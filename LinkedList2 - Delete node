@@ -1,0 +1,13 @@
+int delete_node(NODE *q)
+{
+   if (q->left && q->right)
+   {
+     NODE *p = q->left;
+     NODE *r = q->right;
+     p->right = r;
+     r->left = p;
+     free(q);
+     return 1;
+   }
+   return 0;
+}
