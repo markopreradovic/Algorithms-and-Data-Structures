@@ -1,0 +1,28 @@
+typedef struct stek 
+        {
+           <tip> niz[MAX]; int tos;
+        } STEK; 
+
+int isFull(STEK *s)
+{
+   return s->tos == MAX-1;
+}
+
+int isEmpty(STEK *s)
+{
+   return s->tos == -1;
+}
+
+int push(STEK *s, <tip> info)
+{
+   if (isFull(s)) return 0;
+   s->niz[++s->tos] = info;
+   return 1;
+}
+
+int pop(STEK *s, <tip> *info)
+{
+   if (isEmpty(s)) return 0;
+   *info = s->niz[s->tos--];
+   return 1;
+}
