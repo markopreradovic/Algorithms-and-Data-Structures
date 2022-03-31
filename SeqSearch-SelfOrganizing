@@ -1,0 +1,25 @@
+int SelfToFront(<tip> niz[], <tip> kljuc, int n) 
+{
+   for (int i=0; i<n; i++) 
+      if (niz[i] == kljuc)
+      { 
+         <tip> pom = niz[i];
+         for ( ; i>0; i--) niz[i]=niz[i-1];
+         niz[0] = pom; 
+         return 0;
+      }
+   return -1;
+}
+
+int SelfToBack(<tip> niz[], <tip> kljuc, int n) 
+{
+   for (int i=0; i<n; i++) 
+      if (niz[i] == kljuc)
+      { 
+         <tip> pom = niz[i];
+         for ( ; i<n-1; i++) niz[i]=niz[i+1];
+         niz[n-1] = pom; 
+         return n-1;
+      }
+   return -1;
+}
