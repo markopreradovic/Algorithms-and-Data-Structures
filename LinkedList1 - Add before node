@@ -1,0 +1,11 @@
+int insert_before(NODE *p, <tip> info)
+{
+   NODE *q = (NODE *) malloc(sizeof(NODE));
+   if (q==NULL) return 0;
+   q->info = p->info;
+   q->next = p->next;
+
+   p->info = info;
+   p->next = q;
+   return 1;
+}
