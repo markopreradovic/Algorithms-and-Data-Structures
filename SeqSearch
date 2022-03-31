@@ -1,0 +1,13 @@
+int SeqSearch (<tip> niz[], <tip> kljuc, int n) 
+{
+   for (int i=0; i<n; i++) 
+      if (niz[i] == kljuc) return i;
+   return -1;
+}
+
+int SeqSearchStraza (<tip> niz[], <tip> kljuc) 
+{
+   int i=0;
+   while (niz[i] != kljuc) i++; 
+   return i;
+}
