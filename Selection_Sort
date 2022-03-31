@@ -1,13 +1,11 @@
-void SelectionSort (<tip> niz[], int n) 
+void InsertionSort (<tip> niz[], int n) 
 {
-   int i, j, min;
-   for (i=0; i<n-1; i++) 
+   int i, j;
+   for (i=1; i<n; i++) 
    {
-      for (min=i, j=i+1; j<n; j++) 
-         if (niz[j]<niz[min]) min=j;
-      if (min!=i)
-      {
-         <tip> pom=niz[i]; niz[i]=niz[min]; niz[min]=pom;
-      }
+      <tip> x=niz[i];
+      for (j=i; j>0 && x<niz[j-1]; j--) 
+         niz[j]=niz[j-1];
+      niz[j]=x;
    }
 }
