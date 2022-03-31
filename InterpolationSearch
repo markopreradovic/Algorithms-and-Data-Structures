@@ -1,0 +1,17 @@
+int InterSearch (<tip> niz[], int n, <tip> kljuc) 
+{
+  int begin=0, end=n-1, sredina, brojliac, imenilac;
+  do
+  {
+    brojilac = (kljuc-niz[begin]) * (end-begin);
+    imenilac = niz[end] – niz[begin]; 
+    sredina = begin + brojilac/imenilac;
+    if (niz[sredina] == kljuc) return sredina;
+    if (kljuc < niz[sredina]) 
+      end = sredina-1;
+    else 
+      begin = sredina+1;
+  }
+  while (begin <= end);
+  return -1;
+}
