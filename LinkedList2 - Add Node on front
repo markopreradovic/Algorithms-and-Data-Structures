@@ -1,0 +1,18 @@
+void add_front(NODE **glava, int info)
+{
+   NODE *q = (NODE *) malloc(sizeof(NODE));
+   q->info = info;
+
+   if (*glava == NULL)
+   {
+      q->left = q->right = NULL;
+      *glava = q;
+   }
+   else
+   {
+      q->right = *glava; 
+      q->left = NULL;
+      (*glava)->left = q;
+      *glava = q;
+   }
+}
