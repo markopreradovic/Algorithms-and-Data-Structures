@@ -1,0 +1,18 @@
+void add_back(NODE **rep, int info)
+{
+   NODE *q = (NODE *) malloc(sizeof(NODE));
+   q->info = info;
+
+   if (*rep == NULL)
+   {
+      q->left = q->right = NULL;
+      *rep = q;
+   }
+   else
+   {
+      q->left = *rep; 
+      q->right = NULL;
+      (*rep)->right = q;
+      *rep = q;
+   }
+}
