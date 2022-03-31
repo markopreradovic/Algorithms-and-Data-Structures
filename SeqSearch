@@ -11,3 +11,11 @@ int SeqSearchStraza (<tip> niz[], <tip> kljuc)
    while (niz[i] != kljuc) i++; 
    return i;
 }
+
+int SeqSorted(<tip> niz[], <tip> kljuc, int n) 
+{
+   int i=0;
+   while (niz[i]<kljuc && i<n) i++; 
+   return (niz[i]==kljuc && i<n);
+}
+
