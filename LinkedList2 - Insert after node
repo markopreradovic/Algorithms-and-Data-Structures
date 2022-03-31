@@ -1,0 +1,14 @@
+int insert_after(NODE *p, int info)
+{
+   NODE *r = p->right;
+
+   if (r == NULL) return 0;
+
+   NODE *q = (NODE *) malloc(sizeof(NODE));
+   q->info = info;
+
+   q->right = r;  r->left = q;
+   q->left = p;   p->right = q;
+
+   return 1;
+}
