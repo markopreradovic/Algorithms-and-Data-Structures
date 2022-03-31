@@ -1,0 +1,12 @@
+int BinSearchRek (<tip> niz[], <tip> kljuc, int begin, int end) 
+{
+   int sredina = (begin+end) / 2;
+   if (begin > end) return -1;
+   if (niz[sredina] == kljuc) 
+      return sredina;
+   else
+      if (kljuc < niz[sredina]) 
+         return BinSearchRek(niz,kljuc,begin,sredina-1);
+      else 
+         return BinSearchRek(niz,kljuc,sredina+1,end);
+}
