@@ -1,0 +1,18 @@
+void mergeSort(int niz[], int begin, int end)
+{
+   if (begin<end)
+   {
+      int sredina = (begin + end)/2;
+      int i, j,k, len=end-begin+1;
+      int pom[len];
+      mergeSort(niz, begin, sredina);
+      mergeSort(niz, sredina+1, end);
+      /* spajanje */
+      i=begin; j=sredina+1; k=0;
+      while (i<=sredina && j<=end)
+         pom[k++] = (niz[i]<=niz[j]) ? niz[i++] : niz[j++];
+      while (i<=sredina) pom[k++]=niz[i++];
+      while (j<=end) pom[k++]=niz[j++];
+      for (i=0; i<len; i++) niz[begin+i] = pom[i];
+   }
+}
