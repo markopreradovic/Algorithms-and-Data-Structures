@@ -1,0 +1,12 @@
+int delete_node(NODE *p)
+{
+   NODE *q = p->next;
+   if (q)
+   {
+     p->next = q->next;
+     p->info = q->info;
+     free(q);
+     return 1;
+   }
+   return 0;
+}
