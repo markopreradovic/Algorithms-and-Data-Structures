@@ -1,16 +1,14 @@
-void ShellSort (int arr[], int n) 
+void ShellSort (<tip> niz[], int n) 
 {
   int i, j, h;
   for (h=n/2; h>0; h/=2) 
   {
     for (i=h; i<n; i++) 
     {
-      int x=arr[i];
-      for (j=i; j>=h && x<arr[j-h]; j-=h) 
-        arr[j]=arr[j-h];
-      arr[j]=x;
+      <tip> x=niz[i];
+      for (j=i; j>=h && x<niz[j-h]; j-=h) 
+        niz[j]=niz[j-h];
+      niz[j]=x;
     }
   }
 }
-
-//in this case int but it can sort other types as well
