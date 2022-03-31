@@ -1,0 +1,29 @@
+void qSort(int niz[], int begin, int end)
+{
+  if (begin < end)
+  {
+     int pivot = split(niz,begin,end);
+     qSort(niz, begin, pivot-1);
+     qSort(niz, pivot+1, end);
+  }
+}
+
+int split(int niz[], int begin, int end)
+{
+   int i=begin, j=end;
+   int pivot = niz[begin];
+   while (i<j)
+   {
+       while (niz[i]<=pivot && i<j) i++;
+       while (niz[j]>pivot) j--;
+       if (i<j)
+       {
+           int pom=niz[i]; 
+           niz[i]=niz[j]; 
+           niz[j]=pom;
+       }
+   }
+   niz[begin] = niz[j];
+   niz[j] = pivot;
+   return j;
+}
