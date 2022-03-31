@@ -1,0 +1,22 @@
+typedef struct node { <tip> info; struct node *next; } NODE;
+
+int push(NODE **tos, <tip> info)
+{
+  NODE *q=(NODE*) malloc(sizeof(NODE));
+  if (q==NULL) return 0;
+  q->info = info;
+  q->next = *tos;
+  *tos = q;    
+  return 1;  
+} 
+
+/* skidanje sa steka */
+int pop(NODE **tos, <tip> *info)
+{
+  if (*tos == NULL) return 0;
+  NODE *q = *tos;
+  *info = q->info;
+  *tos = q->next;
+  free(q);      
+  return 1;
+} 
