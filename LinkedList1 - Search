@@ -1,0 +1,6 @@
+NODE *search(NODE *lista, <tip> info)
+{
+   while (lista && lista->info != info)
+      lista = lista->next;
+   return lista;
+}
