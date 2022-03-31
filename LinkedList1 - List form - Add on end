@@ -1,0 +1,16 @@
+void formiranjeListe(NODE **lista, <tip> info)
+{
+   NODE *novi = (NODE *) malloc(sizeof(NODE));
+   novi->info = info;
+   novi->next = NULL;
+
+   if (*lista == NULL)
+      *lista = novi;
+   else
+   {
+      NODE *tmp = *lista;
+      while (tmp->next)
+         tmp = tmp->next;
+      tmp->next = novi;
+   }
+}
