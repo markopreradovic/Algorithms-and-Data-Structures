@@ -1,0 +1,13 @@
+void InsertionSort (int arr[], int n) 
+{
+   int i, j;
+   for (i=1; i<n; i++) 
+   {
+      int x=arr[i];
+      for (j=i; j>0 && x<arr[j-1]; j--) 
+         arr[j]=arr[j-1];
+      arr[j]=x;
+   }
+}
+
+//in this case int but it can sort other types as well
