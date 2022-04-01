@@ -1,0 +1,10 @@
+NODE *add(NODE *node, <tip> info)
+{
+  if (node == NULL) 
+     return newNode(info);
+  if (info <= node->info)
+     node->left = add(node->left, info);
+  else
+     node->right = add(node->right, info);
+  return node;
+}
