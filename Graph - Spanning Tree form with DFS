@@ -1,0 +1,14 @@
+typedef struct G { int n; char nodes[MAX]; int ms[MAX][MAX]; } GRAF;
+
+void ST_DFS(GRAF *g, GRAF *st)
+{
+    int visit[MAX]={};
+    void dfs_visit(int u)
+    {
+       int v;
+       visit[u]=1;
+       for (v=0; v<g->n; v++)
+          if (g->ms[u][v] && !visit[v]) { st->ms[u][v]=st->ms[v][u]=1;  dfs_visit(v); }
+    }
+    dfs_visit(0);
+}
