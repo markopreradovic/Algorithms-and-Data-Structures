@@ -1,0 +1,12 @@
+void preorder(NODE *node)
+{
+   if (node != NULL) 
+   {
+      /* obrada oca */
+      ...
+
+      /* obilazak podstabala */
+      preorder(node->left);
+      preorder(node->right);
+   }
+}
