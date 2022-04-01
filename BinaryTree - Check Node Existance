@@ -1,0 +1,13 @@
+int isExist(NODE *node, <tip> kljuc)
+{
+   if (node == NULL) 
+      return 0;
+   else  
+      if (kljuc == node->info) 
+         return 1;
+      else 
+         if (kljuc <= node->info) 
+            return isExist(node->left, kljuc);
+         else
+            return isExist(node->right, kljuc);
+}
