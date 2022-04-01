@@ -1,0 +1,23 @@
+/* brisanje cvora iz stabla */
+NODE *deleteNode(NODE *node, char kljuc)
+{
+   if (node == NULL) return NULL;
+   else
+      if (kljuc < node->info)
+         node->left = deleteNode(node->left, kljuc);
+      else
+         if (kljuc > node->info)
+            node->right = deleteNode(node->right, kljuc);
+         else
+            if (node->left == NULL)
+            {  NODE *q = node->right; free(node); return q;  }
+            else
+               if (node->right == NULL)
+               {  NODE *q = node->left; free(node); return q;  }
+               else
+               {
+                  node->info = node->left->info;
+                  node->left = deleteNode(node->left, node->info) ;
+               }
+   return node;
+}
