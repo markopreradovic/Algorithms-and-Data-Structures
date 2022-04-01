@@ -1,0 +1,12 @@
+void inorder(NODE *node)
+{
+   if (node != NULL) 
+   {
+      inorder(node->left);      
+      
+      /* obrada oca */
+      ...
+
+      inorder(node->right);
+   }
+}
