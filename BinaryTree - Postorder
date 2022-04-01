@@ -1,0 +1,11 @@
+void postorder(NODE *node)
+{
+   if (node != NULL) 
+   {
+      postorder(node->left);      
+      postorder(node->right);      
+      
+      /* obrada oca */
+      ...
+   }
+}
