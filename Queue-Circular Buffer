@@ -1,0 +1,32 @@
+typedef struct red
+        {
+           <tip> niz[MAX]; 
+           int f, r;
+        } RED;
+
+int isFull(RED *buf)
+{
+   return (buf->r+1) % MAX == buf->f;
+}
+
+int isEmpty(RED *buf)
+{
+   return buf->f == buf->r;
+}
+
+int insert(RED *buf, <tip> info)
+{
+   if (isFull(buf))                     
+      buf->f = (buf->f + 1) % MAX;
+   buf->r = (buf->r + 1) % MAX;
+   buf->niz[buf->r] = info;
+   return 1;
+}
+
+int delete(RED *buf, <tip> *info)
+{
+   if (isEmpty(buf)) return 0;
+   *info = buf->niz[buf->f];
+   buf->f = (buf->f + 1) % MAX;
+   return 1;
+}
