@@ -1,0 +1,7 @@
+NODE *newNode(<tip> info)
+{
+   NODE *q = (NODE*) malloc(sizeof(NODE));
+   q->left = q->right = NULL;
+   q->info = info;
+   return q;
+}
