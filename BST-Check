@@ -1,0 +1,14 @@
+is_BST(root):
+if root == NULL:
+return true
+// Check values in left subtree
+if root->left != NULL:
+max_key_in_left = find_max_key(root->left)
+if max_key_in_left > root->key:
+return false
+// Check values in right subtree
+if root->right != NULL:
+min_key_in_right = find_min_key(root->right)
+if min_key_in_right < root->key:
+return false
+return is_BST(root->left) && is_BST(root->right)
